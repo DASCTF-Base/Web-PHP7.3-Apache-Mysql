@@ -1,5 +1,9 @@
 #!/bin/bash
 
+usermod -d /var/lib/mysql/ mysql
+ln -s /var/lib/mysql/mysql.sock /tmp/mysql.sock
+chown -R mysql:mysql /var/lib/mysql
+
 mysqld_safe &
 
 mysql_ready() {
