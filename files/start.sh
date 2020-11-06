@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -rf /var/run/mysqld/mysqld.sock.lock
+rm -rf /tmp/mysql.sock
 usermod -d /var/lib/mysql/ mysql
 ln -s /var/lib/mysql/mysql.sock /tmp/mysql.sock
 chown -R mysql:mysql /var/lib/mysql
